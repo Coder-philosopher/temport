@@ -2,24 +2,25 @@ import { ProjectCard } from "./project-card";
 
 const projects = [
   {
-    title: "Project One",
-    description: "A full-stack web application built with Next.js and TypeScript.",
-    technologies: ["React", "Next.js", "TypeScript", "Tailwind"],
-    githubUrl: "https://github.com/yourusername/project-one",
-    demoUrl: "https://project-one.demo",
+    title: "Lexora",
+    description: "A real-time chatting application featuring end-to-end encryption, seamless chat recovery across devices, and a unique Lexus-ID for secure and private communication, eliminating the need for backups.",
+    technologies: ["React", "Node.js", "TypeScript", "Tailwind" , "MongoDB" , "Socket.io"],
+    githubUrl: "https://github.com/Coder-philosopher/lexora-frontend",
+    demoUrl: "https://lexora-taupe.vercel.app/",
   },
   {
-    title: "Project Two",
-    description: "A real-time chat application using WebSocket technology.",
-    technologies: ["React", "Node.js", "Socket.io", "MongoDB"],
-    githubUrl: "https://github.com/yourusername/project-two",
+    title: "AI Voice Assistant",
+    description: "AI Voice Assistant is a web app for text-to-speech and speech-to-text conversion. It offers customizable voice settings, audio downloads, real-time STT, voice selection, dark mode, and a responsive UI for mobile and desktop",
+    technologies: ["React", "Node.js", "Socket.io", "TypeScript"],
+    githubUrl: "https://github.com/Coder-philosopher/textandvoice",
+    demoUrl: "https://lexora-taupe.vercel.app/",
   },
   {
-    title: "Project Three",
-    description: "An e-commerce platform with advanced filtering and search.",
-    technologies: ["Next.js", "Prisma", "PostgreSQL", "Stripe"],
-    githubUrl: "https://github.com/yourusername/project-three",
-    demoUrl: "https://project-three.demo",
+    title: "Project AI",
+    description: "AI Image Generator is a web-based application that leverages powerful API to create images from text prompts. Users can input detailed text description. The generated images can be downloaded in PNG format. The app is designed to be user-friendly, providing a seamless experience across both mobile and desktop platforms.",
+    technologies: ["Node.js", "Hugging Face", "React",],
+    githubUrl: "https://github.com/Coder-philosopher/projectAI",
+    demoUrl: "https://projectai-blue.vercel.app/",
   },
 ];
 

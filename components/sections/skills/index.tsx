@@ -3,7 +3,7 @@ import { SkillCard } from "./skill-card";
 const skillCategories = [
   {
     category: "Languages",
-    skills: ["TypeScript", "JavaScript", "Python", "SQL", "HTML", "CSS"],
+    skills: ["JavaScript", "Python", "C++", "HTML"],
   },
   {
     category: "Frameworks",
@@ -11,7 +11,7 @@ const skillCategories = [
   },
   {
     category: "Tools",
-    skills: ["Git", "Docker", "AWS", "Firebase", "Vercel"],
+    skills: ["Git-Github", "Netlify", "AWS", "Railway", "Vercel"],
   },
 ];
 

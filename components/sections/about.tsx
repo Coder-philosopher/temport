@@ -8,17 +8,17 @@ const details = [
   {
     icon: <GraduationCap className="h-6 w-6" />,
     title: "Education",
-    description: "Computer Science, University Name",
+    description: "Metallurgical and Materials Engineering - National Institute of Technology, Raipur",
   },
   {
     icon: <Code2 className="h-6 w-6" />,
     title: "Expertise",
-    description: "Full-stack Development, Cloud Architecture",
+    description: "Full-stack Development, Cloud Architecture , Data Structures & Algorithms , AI/ML",
   },
   {
     icon: <Gamepad2 className="h-6 w-6" />,
     title: "Hobbies",
-    description: "Gaming, Photography, Travel",
+    description: "Photography, Travelling, Swimming, Trying out new things",
   },
 ];
 
@@ -36,8 +36,7 @@ export function About() {
           <h2 className="text-3xl font-bold text-center mb-12">About Me</h2>
           <div className="max-w-3xl mx-auto text-center mb-12">
             <p className="text-lg text-muted-foreground">
-              A passionate software developer with expertise in building modern web applications.
-              I love turning complex problems into simple, beautiful solutions.
+              Engineering Student with interest in software development and a strong foundation in metallurgical and materials engineering. I am a quick learner and a team player with a strong work ethic. I am always eager to learn new technologies and improve my skills.
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
