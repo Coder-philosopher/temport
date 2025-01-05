@@ -1,6 +1,6 @@
 "use client";
 
-import * as React from "react";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
 import {
@@ -12,7 +12,7 @@ import {
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
-import { Github, Linkedin } from "lucide-react";
+import { Github, Linkedin, Sun, Moon } from "lucide-react";
 import { Button } from "./ui/button";
 
 const sections = [
@@ -23,11 +23,27 @@ const sections = [
 ];
 
 export function Navbar() {
+  const [theme, setTheme] = useState("light");
+
+  useEffect(() => {
+    const storedTheme = localStorage.getItem("theme");
+    const currentTheme = storedTheme || "light";
+    setTheme(currentTheme);
+    document.documentElement.classList.toggle("dark", currentTheme === "dark");
+  }, []);
+
+  const toggleTheme = () => {
+    const newTheme = theme === "light" ? "dark" : "light";
+    setTheme(newTheme);
+    localStorage.setItem("theme", newTheme);
+    document.documentElement.classList.toggle("dark", newTheme === "dark");
+  };
+
   return (
     <div className="fixed top-0 left-0 right-0 z-50 border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <nav className="container flex h-16 items-center">
         <Link href="/" className="mr-6 flex items-center space-x-2">
-          <span className="font-bold ml-2">abds.dev</span>
+          <span className="font-bold ml-2">Abdullah Shaikh</span>
         </Link>
         <NavigationMenu className="hidden md:flex">
           <NavigationMenuList>
@@ -45,14 +61,25 @@ export function Navbar() {
         <div className="flex-1" />
         <div className="flex items-center space-x-4">
           <Button variant="ghost" size="icon" asChild>
-            <Link href="https://github.com/yourusername" target="_blank">
+            <Link href="https://github.com/Coder-philosopher" target="_blank">
               <Github className="h-5 w-5" />
             </Link>
           </Button>
           <Button variant="ghost" size="icon" asChild>
-            <Link href="https://linkedin.com/in/yourusername" target="_blank">
+            <Link
+              href="https://www.linkedin.com/in/abdullah-shaikh-97309b297/"
+              target="_blank"
+            >
               <Linkedin className="h-5 w-5" />
             </Link>
+          </Button>
+
+          <Button variant="ghost" size="icon" onClick={toggleTheme}>
+            {theme === "light" ? (
+              <Moon className="h-5 w-5" />
+            ) : (
+              <Sun className="h-5 w-5" />
+            )}
           </Button>
         </div>
       </nav>

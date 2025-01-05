@@ -16,20 +16,20 @@ export function Hero() {
           transition={{ duration: 0.5 }}
         >
           <h1 className="text-4xl md:text-6xl font-bold mb-6">
-            Your Name
+            Abdullah Shaikh
           </h1>
           <p className="text-xl md:text-2xl text-muted-foreground mb-8">
             Crafting experiences with code and creativity
           </p>
           <div className="flex justify-center gap-4">
             <Button asChild>
-              <Link href="https://github.com/yourusername" target="_blank">
+              <Link href="https://github.com/Coder-philosopher" target="_blank">
                 <Github className="mr-2 h-5 w-5" />
                 GitHub
               </Link>
             </Button>
             <Button variant="secondary" asChild>
-              <Link href="https://linkedin.com/in/yourusername" target="_blank">
+              <Link href="https://www.linkedin.com/in/abdullah-shaikh-97309b297/" target="_blank">
                 <Linkedin className="mr-2 h-5 w-5" />
                 LinkedIn
               </Link>
