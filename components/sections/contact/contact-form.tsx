@@ -14,7 +14,9 @@ const formSchema = z.object({
   email: z.string().email("Invalid email address"),
   message: z.string().min(10, "Message must be at least 10 characters"),
 });
+function popup(){
 
+}
 export function ContactForm() {
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -74,7 +76,7 @@ export function ContactForm() {
             </FormItem>
           )}
         />
-        <Button type="submit" className="w-full">Send Message</Button>
+        <Button type="submit" className="w-full">Send Message <br />This is not Working Currently💔 </Button>
       </form>
     </Form>
   );
