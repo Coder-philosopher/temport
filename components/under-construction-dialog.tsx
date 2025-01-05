@@ -27,14 +27,14 @@ export function UnderConstructionDialog() {
       <Dialog open={open} onOpenChange={setOpen}>
         <DialogContent>
           <DialogHeader>
-            <DialogTitle>🚧 Under Construction 🚧</DialogTitle>
+            <DialogTitle>Phase-I Completed 🎉 </DialogTitle>
             <DialogDescription>
-              Oops! You&#39;ve stumbled upon a work-in-progress masterpiece. 🎨✨  
+              You&#39;ve stumbled upon a work-in-progress masterpiece. 🎨✨  
               I&#39;m cooking Something Crazzy. Stay tuned!, Enjoy Current Work 🚀
             </DialogDescription>
           </DialogHeader>
           <DialogFooter>
-            <Button onClick={() => setOpen(false)}>Cool, I&#39;ll Wait! 👍</Button>
+            <Button onClick={() => setOpen(false)}>Cool, I&#39;ll see Phase-I 👍</Button>
           </DialogFooter>
         </DialogContent>
       </Dialog>

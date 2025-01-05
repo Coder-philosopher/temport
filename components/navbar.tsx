@@ -43,21 +43,27 @@ export function Navbar() {
     <div className="fixed top-0 left-0 right-0 z-50 border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <nav className="container flex h-16 items-center">
         <Link href="/" className="mr-6 flex items-center space-x-2">
-          <span className="font-bold ml-2">Abdullah Shaikh</span>
+          <span className="font-bold ml-2  bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-transparent bg-clip-text animate-pulse">Abdullah Shaikh</span>
         </Link>
         <NavigationMenu className="hidden md:flex">
-          <NavigationMenuList>
-            {sections.map((section) => (
-              <NavigationMenuItem key={section.name}>
-                <Link href={section.href} legacyBehavior passHref>
-                  <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                    {section.name}
-                  </NavigationMenuLink>
-                </Link>
-              </NavigationMenuItem>
-            ))}
-          </NavigationMenuList>
-        </NavigationMenu>
+  <NavigationMenuList>
+    {sections.map((section) => (
+      <NavigationMenuItem key={section.name}>
+        <Link href={section.href} legacyBehavior passHref>
+          <NavigationMenuLink
+            className={cn(
+              navigationMenuTriggerStyle(),
+              "border border-transparent dark:border-gray-600 border-black hover:border-gray-700 dark:hover:border-white rounded-md transition-colors"
+            )}
+          >
+            {section.name}
+          </NavigationMenuLink>
+        </Link>
+      </NavigationMenuItem>
+    ))}
+  </NavigationMenuList>
+</NavigationMenu>
+
         <div className="flex-1" />
         <div className="flex items-center space-x-4">
           <Button variant="ghost" size="icon" asChild>

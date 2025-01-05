@@ -9,6 +9,10 @@ import { UnderConstructionDialog } from "@/components/under-construction-dialog"
 
 export default function Home() {
   return (
+    <>
+    <head>
+      <title>Portfolio of Abdullah Shaikh</title>
+    </head>
     <main className="min-h-screen bg-background">
       <UnderConstructionDialog />
       <Navbar />
@@ -19,5 +23,6 @@ export default function Home() {
       <Contact />
       <Footer />
     </main>
+    </>
   );
 }
