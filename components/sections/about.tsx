@@ -2,23 +2,48 @@
 
 import { motion } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
-import { Code2,GraduationCap, Lightbulb } from "lucide-react";
+import { Code2, GraduationCap, Lightbulb } from "lucide-react";
 import Image from "next/image";
 
-const details = [
+// Define TypeScript Interfaces
+interface EducationDetail {
+  type: "education";
+  logo: string;
+  institution: string;
+  course: string;
+  timeline: string;
+}
+
+interface DescriptionDetail {
+  type: "description";
+  description: string[];
+}
+
+type SubDetail = EducationDetail | DescriptionDetail;
+
+interface Detail {
+  icon: JSX.Element;
+  title: string;
+  subDetails: SubDetail[];
+}
+
+// Data with explicit type
+const details: Detail[] = [
   {
     icon: <GraduationCap className="h-6 w-6 text-primary" />,
     title: "Education",
     subDetails: [
       {
+        type: "education",
         logo: "/nit-logo.png", // Example logo path
-        institution: "National Institute of Technology, Raipur.",
+        institution: "National Institute of Technology, Raipur",
         course: "Metallurgical and Materials Engineering",
         timeline: "2023 - 2027",
       },
       {
+        type: "education",
         logo: "/som-logo.png", // Example logo path
-        institution: "SK Somaiya VinayMandir.",
+        institution: "SK Somaiya VinayMandir",
         course: "Higher Secondary Education",
         timeline: "2020 - 2022",
       },
@@ -29,6 +54,7 @@ const details = [
     title: "Expertise",
     subDetails: [
       {
+        type: "description",
         description: [
           "💻 Full-stack Development: Skilled in the MERN stack, Next.js, and building scalable web applications.",
           "☁️ Cloud Architecture: Proficient in deploying apps on AWS, Vercel, and using Railway for efficiency.",
@@ -43,6 +69,7 @@ const details = [
     title: "Interests/Hobbies",
     subDetails: [
       {
+        type: "description",
         description: [
           "📷 Photography",
           "✈️ Travelling",
@@ -55,6 +82,7 @@ const details = [
   },
 ];
 
+// About Component
 export function About() {
   return (
     <section id="about" className="py-24 bg-muted/50">
@@ -91,45 +119,39 @@ export function About() {
                   {/* Details */}
                   <div className="space-y-2">
                     <h3 className="text-xl font-semibold">{item.title}</h3>
-                    {item.subDetails ? (
-                      <div className="space-y-4">
-                        {item.subDetails.map((sub, index) => (
-                          <div key={index} className="space-y-2">
-                            {/* Description List */}
-                            {sub.description ? (
-                              <ul className="list-disc list-inside text-muted-foreground">
-                                {sub.description.map((point, i) => (
-                                  <li key={i} className="text-sm">
-                                    {point}
-                                  </li>
-                                ))}
-                              </ul>
-                            ) : (
-                              /* Education Details */
-                              <div className="flex items-start gap-4">
-                                <Image
-                                  src={sub.logo}
-                                  alt={`${sub.institution} logo`}
-                                  width={100}
-                                  height={100}
-                                  priority
-                                  quality={90}
-                                />
-                                <div>
-                                  <p className="font-medium">{sub.institution}</p>
-                                  <p className="text-sm text-muted-foreground">
-                                    {sub.course} <br />
-                                    <span className="font-semibold">{sub.timeline}</span>
-                                  </p>
-                                </div>
-                              </div>
-                            )}
+                    {item.subDetails.map((sub, index) => (
+                      <div key={index} className="space-y-2">
+                        {/* Handle Education Details */}
+                        {sub.type === "education" ? (
+                          <div className="flex items-start gap-4">
+                            <Image
+                              src={sub.logo}
+                              alt={`${sub.institution} logo`}
+                              width={100}
+                              height={100}
+                              priority
+                              quality={90}
+                            />
+                            <div>
+                              <p className="font-medium">{sub.institution}</p>
+                              <p className="text-sm text-muted-foreground">
+                                {sub.course} <br />
+                                <span className="font-semibold">{sub.timeline}</span>
+                              </p>
+                            </div>
                           </div>
-                        ))}
+                        ) : (
+                          // Handle Description Details
+                          <ul className="list-disc list-inside text-muted-foreground">
+                            {sub.description.map((point, i) => (
+                              <li key={i} className="text-sm">
+                                {point}
+                              </li>
+                            ))}
+                          </ul>
+                        )}
                       </div>
-                    ) : (
-                      <p className="text-sm text-muted-foreground">{item.description}</p>
-                    )}
+                    ))}
                   </div>
                 </CardContent>
               </Card>
